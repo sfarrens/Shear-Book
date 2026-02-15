@@ -1,0 +1,8 @@
+{% comment %}
+  Include a Chart.js chart. Usage:
+  {% include chart.html id="myChart" type="line" config=page.chart_config %}
+  Or use the chart container with data attributes and init in main.js
+{% endcomment %}
+<div class="chart-container" style="position: relative; height: 300px;">
+  <canvas id="{{ include.id | default: 'chartCanvas' }}"></canvas>
+</div>

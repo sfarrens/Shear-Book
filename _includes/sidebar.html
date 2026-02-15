@@ -1,0 +1,12 @@
+<aside class="sidebar">
+  <h2 class="sidebar-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h2>
+  <p class="sidebar-tagline">{{ site.description }}</p>
+  <nav class="toc-nav" aria-label="Table of contents">
+    <ul class="toc-list">
+      {% assign sorted_chapters = site.chapters | sort: "nav_order" %}
+      {% for chapter in sorted_chapters %}
+      <li><a href="{{ chapter.url | relative_url }}">Chapter {{ chapter.nav_order }}: {{ chapter.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>

@@ -1,0 +1,41 @@
+# Shear-Book - Jekyll configuration for GitHub Pages
+# Cosmic Shear: A Book on Weak Gravitational Lensing
+
+title: Shear-Book
+description: An interactive introduction to cosmic shear and weak gravitational lensing
+author: Samuel Farrens
+baseurl: ""
+url: ""
+github:
+  repository: Shear-Book
+
+# Jekyll & GitHub Pages
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+permalink: pretty
+
+# Collections for book chapters
+collections:
+  chapters:
+    output: true
+    permalink: /chapters/:name/
+
+# Defaults for chapters
+defaults:
+  - scope:
+      path: ""
+      type: chapters
+    values:
+      layout: chapter
+      nav_order: 1
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - .gitignore

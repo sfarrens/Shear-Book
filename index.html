@@ -1,0 +1,35 @@
+---
+layout: default
+title: Shear-Book
+description: An interactive introduction to cosmic shear and weak gravitational lensing
+---
+
+<div class="index-page">
+  <header class="page-header">
+    <h1>Shear-Book</h1>
+    <p class="lead">{{ site.description }}</p>
+  </header>
+
+  <section class="intro">
+    <p>
+      Cosmic shear is the weak gravitational lensing of distant galaxies by the large-scale
+      structure of the Universe. This book provides an introduction to the theory, measurement,
+      and analysis of cosmic shear, with interactive visualisations built using Chart.js.
+    </p>
+  </section>
+
+  <section class="chapters-section">
+    <h2>Chapters</h2>
+    <ul class="chapter-list">
+      {% assign sorted_chapters = site.chapters | sort: "nav_order" %}
+      {% for chapter in sorted_chapters %}
+      <li>
+        <a href="{{ chapter.url | relative_url }}">
+          <span>{{ chapter.title }}</span>
+          <span class="chapter-num">Chapter {{ chapter.nav_order }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
