@@ -4,8 +4,8 @@
 title: Shear-Book
 description: An interactive introduction to cosmic shear and weak gravitational lensing
 author: Samuel Farrens
-baseurl: ""
-url: ""
+baseurl: "/Shear-Book"
+url: "https://sfarrens.github.io"
 github:
   repository: Shear-Book
 
