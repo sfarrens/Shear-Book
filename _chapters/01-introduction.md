@@ -11,8 +11,8 @@ Cosmic shear is the weak gravitational lensing of distant galaxies by the large-
 
 Unlike baryonic probes that trace luminous matter, weak lensing responds to **all** matter—including dark matter. This makes cosmic shear one of the most powerful tools for:
 
-- Constraining the amplitude of matter fluctuations, $$\sigma_8$$
-- Measuring the matter density parameter, $$\Omega_m$$
+- Constraining the amplitude of matter fluctuations, <a href="#var-sigma8" class="var-link">$$\sigma_8$$</a>
+- Measuring the matter density parameter, <a href="#var-omega-m" class="var-link">$$\Omega_m$$</a>
 - Testing dark energy and the expansion history
 - Probing the growth of structure and modified gravity
 
@@ -27,3 +27,14 @@ This book is organised into chapters that build from foundations to applications
 5. **Systematics & Calibration** — Bias, photometric redshifts, and validation
 
 Each chapter includes interactive elements and visualisations where helpful. We use Chart.js for plotting examples that illustrate key relationships.
+
+---
+
+## Notation {#notation}
+
+<dl class="notation-list">
+  <dt id="var-sigma8">σ<sub>8</sub></dt>
+  <dd>Amplitude of matter fluctuations on 8 h⁻¹ Mpc scale</dd>
+  <dt id="var-omega-m">Ω<sub>m</sub></dt>
+  <dd>Matter density parameter (fraction of critical density)</dd>
+</dl>

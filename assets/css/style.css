@@ -322,7 +322,7 @@ body {
   color: var(--pst-color-on-surface);
 }
 
-/* MathJax styling */
+/* MathJax styling — display equations larger than body text */
 .chapter-content .MathJax,
 .chapter-content mjx-container {
   overflow-x: auto;
@@ -331,6 +331,86 @@ body {
 
 .chapter-content .mjx-math {
   font-size: 1.1em;
+}
+
+/* Display equations (block) — 1.25× body text */
+.chapter-content .equation-block,
+.chapter-content .MathJax_Display {
+  font-size: 1.25em;
+}
+
+.chapter-content .equation-block mjx-container,
+.chapter-content .equation-block .MathJax,
+.chapter-content .MathJax_Display mjx-container,
+.chapter-content .MathJax_Display .MathJax {
+  font-size: inherit !important;
+}
+
+/* Variable links — scroll to notation footer */
+.chapter-content .var-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--pst-color-primary);
+  cursor: pointer;
+}
+
+.chapter-content .var-link:hover {
+  color: var(--pst-color-link);
+  border-bottom-style: solid;
+}
+
+.chapter-content .var-link:focus {
+  outline: 1px dotted var(--pst-color-primary);
+  outline-offset: 2px;
+}
+
+/* Equation key — variables listed below equation */
+.chapter-content .equation-key {
+  margin: 0.5rem 0 0;
+  font-size: 0.85em;
+  color: var(--pst-color-on-surface);
+}
+
+.chapter-content .equation-key a {
+  color: var(--pst-color-link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--pst-color-primary);
+}
+
+.chapter-content .equation-key a:hover {
+  border-bottom-style: solid;
+}
+
+/* Notation section — variable definitions */
+.chapter-content h2#notation {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--pst-color-border);
+}
+
+.chapter-content .notation-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 2rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.chapter-content .notation-list dt {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--pst-color-on-background);
+}
+
+.chapter-content .notation-list dt:target {
+  background: var(--accent-dim);
+  border-radius: 2px;
+  padding: 0 0.25rem;
+}
+
+.chapter-content .notation-list dd {
+  margin: 0;
+  color: var(--pst-color-on-surface);
 }
 
 /* Chart container */
