@@ -32,26 +32,24 @@ We need algorithms that recover an unbiased shear estimate <a href="#var-g-hat" 
 
 Most methods require calibration factors <a href="#var-m" class="var-link">$$m$$</a> (multiplicative bias) and <a href="#var-c" class="var-link">$$c$$</a> (additive bias):
 
-<div class="equation-block">
+<div class="equation-block" id="eq-shear-calibration">
 $$
-\hat{g} = (1 + m)\, g + c
+\href{#var-g-hat}{\hat{g}} = (1 + \href{#var-m}{m})\, \href{#var-g}{g} + \href{#var-c}{c}
 $$
 <p class="equation-key">Variables: <a href="#var-g-hat">ĝ</a> estimated shear · <a href="#var-g">g</a> true shear · <a href="#var-m">m</a> multiplicative bias · <a href="#var-c">c</a> additive bias</p>
 </div>
 
 Modern surveys (e.g. DES, KiDS, HSC, Euclid) perform extensive simulations to constrain <a href="#var-m" class="var-link">$$m$$</a> and <a href="#var-c" class="var-link">$$c$$</a> as a function of galaxy properties.
 
----
-
-## Notation {#notation}
-
+<div class="notation-definitions" aria-hidden="true">
 <dl class="notation-list">
-  <dt id="var-g-hat">ĝ</dt>
+  <dt id="var-g-hat" data-eq-id="eq-shear-calibration">ĝ</dt>
   <dd>Estimated shear from galaxy shapes</dd>
-  <dt id="var-g">g</dt>
+  <dt id="var-g" data-eq-id="eq-reduced-shear" data-eq-page="02-weak-lensing">g</dt>
   <dd>True shear</dd>
-  <dt id="var-m">m</dt>
+  <dt id="var-m" data-eq-id="eq-shear-calibration">m</dt>
   <dd>Multiplicative bias; scales the shear estimate</dd>
-  <dt id="var-c">c</dt>
+  <dt id="var-c" data-eq-id="eq-shear-calibration">c</dt>
   <dd>Additive bias; offset in shear estimate</dd>
 </dl>
+</div>

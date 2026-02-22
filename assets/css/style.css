@@ -333,10 +333,39 @@ body {
   font-size: 1.1em;
 }
 
-/* Display equations (block) — 1.25× body text */
+/* Display equations (block) — 1.25× body text, with equation numbers */
+.chapter-content {
+  counter-reset: equation;
+}
+
 .chapter-content .equation-block,
 .chapter-content .MathJax_Display {
   font-size: 1.25em;
+}
+
+.chapter-content .equation-block {
+  counter-increment: equation;
+  position: relative;
+  padding-right: 2.5em;
+  scroll-margin-top: 1rem;
+}
+
+.chapter-content .equation-block:target {
+  background: var(--accent-dim);
+  border-radius: 6px;
+  padding: 0.75rem;
+  padding-right: 2.5em;
+  transition: background 0.3s ease;
+}
+
+.chapter-content .equation-block::after {
+  content: "(" counter(equation) ")";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.9em;
+  color: var(--pst-color-on-surface);
+  font-weight: 500;
 }
 
 .chapter-content .equation-block mjx-container,
@@ -346,7 +375,104 @@ body {
   font-size: inherit !important;
 }
 
-/* Variable links — scroll to notation footer */
+/* Variable definition popup */
+.var-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.var-popup.var-popup-visible {
+  pointer-events: auto;
+}
+
+.var-popup::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.var-popup.var-popup-visible::before {
+  opacity: 1;
+}
+
+.var-popup-inner {
+  position: relative;
+  max-width: 360px;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: var(--pst-color-surface);
+  border: 1px solid var(--pst-color-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.var-popup.var-popup-visible .var-popup-inner {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.var-popup-symbol {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pst-color-on-background);
+  margin-bottom: 0.5rem;
+}
+
+.var-popup-def {
+  font-size: 0.95rem;
+  color: var(--pst-color-on-surface);
+  line-height: 1.5;
+}
+
+.var-popup-eq-link {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--pst-color-link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--pst-color-link);
+}
+
+.var-popup-eq-link:hover {
+  color: var(--pst-color-link-hover);
+  border-bottom-style: solid;
+}
+
+.var-popup-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--pst-color-on-surface);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.var-popup-close:hover {
+  background: var(--pst-color-border);
+  color: var(--pst-color-on-background);
+}
+
+/* Variable links — open definition popup */
 .chapter-content .var-link {
   color: inherit;
   text-decoration: none;
@@ -362,6 +488,18 @@ body {
 .chapter-content .var-link:focus {
   outline: 1px dotted var(--pst-color-primary);
   outline-offset: 2px;
+}
+
+/* Equation variable links (from MathJax \href) */
+.chapter-content .equation-block a[href^="#"] {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--pst-color-primary);
+}
+
+.chapter-content .equation-block a[href^="#"]:hover {
+  color: var(--pst-color-link);
+  border-bottom-style: solid;
 }
 
 /* Equation key — variables listed below equation */
@@ -381,11 +519,13 @@ body {
   border-bottom-style: solid;
 }
 
-/* Notation section — variable definitions */
-.chapter-content h2#notation {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--pst-color-border);
+/* Notation definitions — hidden, used by popup only */
+.notation-definitions {
+  display: none;
+}
+
+.notation-definitions .notation-list {
+  margin: 0;
 }
 
 .chapter-content .notation-list {

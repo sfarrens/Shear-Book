@@ -28,13 +28,11 @@ This book is organised into chapters that build from foundations to applications
 
 Each chapter includes interactive elements and visualisations where helpful. We use Chart.js for plotting examples that illustrate key relationships.
 
----
-
-## Notation {#notation}
-
+<div class="notation-definitions" aria-hidden="true">
 <dl class="notation-list">
   <dt id="var-sigma8">σ<sub>8</sub></dt>
   <dd>Amplitude of matter fluctuations on 8 h⁻¹ Mpc scale</dd>
   <dt id="var-omega-m">Ω<sub>m</sub></dt>
   <dd>Matter density parameter (fraction of critical density)</dd>
 </dl>
+</div>

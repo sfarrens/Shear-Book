@@ -31,17 +31,15 @@ Robust analyses require:
 - Cross-survey comparisons
 - Simulation-based validation (e.g. with known input cosmology)
 
----
-
-## Notation {#notation}
-
+<div class="notation-definitions" aria-hidden="true">
 <dl class="notation-list">
-  <dt id="var-m">m</dt>
+  <dt id="var-m" data-eq-id="eq-shear-calibration" data-eq-page="03-shear-measurement">m</dt>
   <dd>Multiplicative bias; scales the shear</dd>
-  <dt id="var-c">c</dt>
+  <dt id="var-c" data-eq-id="eq-shear-calibration" data-eq-page="03-shear-measurement">c</dt>
   <dd>Additive bias; offset in shear</dd>
   <dt id="var-z">z</dt>
   <dd>Redshift</dd>
   <dt id="var-nz">n(z)</dt>
   <dd>Redshift distribution; number of galaxies per redshift bin</dd>
 </dl>
+</div>

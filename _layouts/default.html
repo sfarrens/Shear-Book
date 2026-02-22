@@ -28,6 +28,14 @@
     </main>
   </div>
   {% include footer.html %}
+  <div id="var-popup" class="var-popup" role="dialog" aria-label="Variable definition" hidden>
+    <div class="var-popup-inner">
+      <div class="var-popup-symbol" id="var-popup-symbol"></div>
+      <div class="var-popup-def" id="var-popup-def"></div>
+      <a href="#" id="var-popup-eq-link" class="var-popup-eq-link" style="display: none;">View in equation →</a>
+      <button type="button" class="var-popup-close" aria-label="Close">&times;</button>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
